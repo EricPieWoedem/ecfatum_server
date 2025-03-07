@@ -4,7 +4,7 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -54,4 +54,6 @@ app.post("/api/contact", async (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
+
+
